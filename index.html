@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Daniel - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <meta name="description" content="Portfolio de Joseph Daniel, Développeur Full Stack & Technologue créatif présentant ses projets et son expérience.">
+    <style>
+        /* Custom animations */
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .scale-in { transform: scale(0); transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .scale-in.visible { transform: scale(1); }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 transition-transform duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-xl font-bold cursor-pointer hover:scale-105 transition-transform">Joseph Daniel</div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Accueil</a>
+                    <a href="#about" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">À propos</a>
+                    <a href="#projects" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Projets</a>
+                    <a href="#experience" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Expérience</a>
+                    <a href="#contact" class="text-sm text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" id="mobile-menu-btn">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden pt-4 pb-2 space-y-2" id="mobile-menu">
+                <a href="#home" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Accueil</a>
+                <a href="#about" class="block py-2 text-sm text-gray-600 hover:text-blue-600">À propos</a>
+                <a href="#projects" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Projets</a>
+                <a href="#experience" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Expérience</a>
+                <a href="#contact" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 -z-10"></div>
+        <div class="text-center px-6 max-w-4xl mx-auto">
+            
+            <img src="my profil.png" alt="Joseph Daniel" class="w-32 h-32 mx-auto mb-8 rounded-full object-cover border-4 border-white shadow-lg scale-in" id="hero-avatar">
+            <h1 class="text-5xl md:text-7xl mb-6 font-bold fade-in">
+                Développeur Full Stack &<br />
+                <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Technologue créatif</span>
+            </h1>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto fade-in">
+                Concevoir des expériences numériques esthétiques, fonctionnelles et évolutives qui font la différence.
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center mb-12 fade-in">
+                <a href="#projects" class="px-8 py-3 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors">Voir mon travail</a>
+                <a href="Resume.pdf" download class="px-8 py-3 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors flex items-center gap-2">
+                    <i data-lucide="download" class="w-4 h-4"></i> Télécharger CV
+                </a>
+            </div>
+            <div class="flex gap-6 justify-center fade-in">
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors"><i data-lucide="mail" class="w-6 h-6"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl mb-6 font-bold">Sur moi</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Je suis un développeur passionné avec 1 an d'expérience dans la création d'applications web et mobile modernes.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6" id="skills-grid"></div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6 bg-gradient-to-b from-white to-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl mb-6 font-bold">Projets en vedette</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Une sélection de mes travaux récents.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid"></div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-6 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl mb-6 font-bold">Expérience & Formation</h2>
+            </div>
+            <div class="relative space-y-12" id="experience-list">
+                <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-600 hidden md:block"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-4xl md:text-5xl mb-6 font-bold">Travaillons ensemble</h2>
+            </div>
+            <div class="bg-white rounded-xl shadow-xl p-8 fade-in">
+                <form class="space-y-6" onsubmit="event.preventDefault(); alert('Message sent!');">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm mb-2 text-gray-700">Nom</label>
+                            <input type="text" placeholder="Votre nom" class="w-full p-2 border rounded-md">
+                        </div>
+                        <div>
+                            <label class="block text-sm mb-2 text-gray-700">Email</label>
+                            <input type="email" placeholder="votre@email.com" class="w-full p-2 border rounded-md">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm mb-2 text-gray-700">Sujet</label>
+                        <input type="text" placeholder="Demande de projet" class="w-full p-2 border rounded-md">
+                    </div>
+                    <div>
+                        <label class="block text-sm mb-2 text-gray-700">Message</label>
+                        <textarea rows="5" placeholder="Parlez-moi de votre projet..." class="w-full p-2 border rounded-md"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors">Envoyer un message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-8 px-6 text-center">
+        <p class="text-gray-400">© 2026 Joseph Daniel. Conçu avec HTML, CSS et JavaScript.</p>
+    </footer>
+
+    <script>
+        const skills = [
+            { name: "React", level: 95, icon: "code-2" },
+            { name: "TypeScript", level: 90, icon: "code-2" },
+            { name: "Node.js", level: 88, icon: "server" },
+            { name: "Design UI/UX", level: 85, icon: "palette" },
+        ];
+        const projects = [
+            { title: "Plateforme E-Commerce", description: "Solution Full-stack avec inventaire en temps réel.", image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80", tags: ["React", "Node.js", "MongoDB"] },
+         { title: "Application Mobile de Fitness multiplateforme pour le suivi d'entraînements.", image: "img/OIP.webp", tags: ["React Native", "Firebase"] },
+            { title: "Tableau de bord analytique", description: "Plateforme de visualisation de données en temps réel.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80", tags: ["Next.js", "D3.js"] }
+        ];
+        const experiences = [
+            { title: "Full Stack Developer", company: "Studi", period: "2026", description: "Développement de pointe d'applications web évolutives.", icon: "briefcase" },
+            { title: "Frontend Developer", company: "Studi", period: "2026", description: "Développement d'applications web réactives avec React.", icon: "briefcase" }
+        ];
+
+        document.getElementById('skills-grid').innerHTML = skills.map(skill => `
+            <div class="fade-in h-full bg-white border rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div class="flex items-center gap-3 mb-4"><div class="p-2 bg-blue-100 rounded-lg"><i data-lucide="${skill.icon}" class="w-5 h-5 text-blue-600"></i></div><h3 class="font-semibold">${skill.name}</h3></div>
+                <div class="w-full bg-gray-200 rounded-full h-2 mb-2"><div class="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full" style="width: ${skill.level}%"></div></div>
+                <p class="text-sm text-gray-600 text-right">${skill.level}%</p>
+            </div>`).join('');
+
+        document.getElementById('projects-grid').innerHTML = projects.map(project => `
+            <div class="fade-in bg-white rounded-xl overflow-hidden border hover:shadow-2xl transition-shadow group h-full">
+                <div class="relative overflow-hidden h-48"><img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                <div class="p-6"><h3 class="text-xl font-semibold mb-2">${project.title}</h3><p class="text-gray-600 text-sm mb-4">${project.description}</p><div class="flex flex-wrap gap-2">${project.tags.map(tag => `<span class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full">${tag}</span>`).join('')}</div></div>
+            </div>`).join('');
+
+        document.getElementById('experience-list').innerHTML += experiences.map(exp => `
+            <div class="relative fade-in"><div class="md:ml-20"><div class="bg-white border rounded-xl p-6 hover:shadow-lg transition-shadow"><div class="flex items-start gap-4"><div class="p-3 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg text-white shrink-0"><i data-lucide="${exp.icon}" class="w-5 h-5"></i></div><div class="flex-1"><h3 class="text-xl font-semibold mb-1">${exp.title}</h3><p class="text-gray-600 mb-2">${exp.company}</p><p class="text-sm text-gray-500 mb-3">${exp.period}</p><p class="text-gray-700">${exp.description}</p></div></div></div></div><div class="absolute left-7 top-8 w-4 h-4 bg-white border-4 border-blue-500 rounded-full hidden md:block"></div></div>`).join('');
+
+        lucide.createIcons();
+
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in, .scale-in').forEach(el => observer.observe(el));
+        
+        setTimeout(() => {
+            document.getElementById('hero-avatar').classList.add('visible');
+            document.querySelectorAll('#home .fade-in').forEach(el => el.classList.add('visible'));
+        }, 100);
+    </script>
+</body>
+</html>
